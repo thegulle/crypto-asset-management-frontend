@@ -9,20 +9,19 @@ const router = createRouter({
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 })
 })
+
 const whiteList = ['/sign-in', '/sign-up', '/forgot-password', '/reset-password', '/not-found']
-/* router.beforeEach((to, from, next) => {
-  const userStore = useUserStore()
-  if ((to.name !== 'sign-in' && to.name !== 'sign-up') && !userStore.isLoggedIn) {
-    next({ name: 'home' })
-  }
-  else {
-    next()
-  }
-}) */
+
 const isAuthenticated = true
 router.beforeEach((to, from, next) => {
+  /* const userStore = useUserStore() */
   if (whiteList.indexOf(to.path) && !isAuthenticated) next({ name: 'sign-in' })
   else next()
+})
+
+router.afterEach((to: any) => {
+  // set page title
+  document.title = `${import.meta.env.VITE_APP_NAME} - ${to.meta.title}`
 })
 
 

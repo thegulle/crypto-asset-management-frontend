@@ -1,15 +1,18 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { ref, reactive } from 'vue'
 
 export const useAppStore = defineStore('AppStore', () => {
   const sidebar = reactive({
     isOpen: window.innerWidth >= 1200 ? true : false
+  })
+  const breadcrumbs: any = reactive({
+    items: [{ title: 'Dashboard', router: { name: 'dashboard.show' } }]
   })
   const toggleSidebar = () => {
     sidebar.isOpen = !sidebar.isOpen
   }
   return {
     sidebar,
+    breadcrumbs,
     toggleSidebar
   } as const
 })

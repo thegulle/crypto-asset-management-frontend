@@ -1,9 +1,22 @@
-// import dark theme
 @use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
 
-// :root {
-//   --ep-color-primary: red;
-// }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --el-bg-primary: #FFFFFF;
+  --el-bg-secondary: #F5F7FA;
+  --el-bg-primary-hover: #f2f2f2;
+  --ep-menu-bg-color: #222831;
+
+  &.dark {
+    --el-bg-primary: #222831;
+    --el-bg-secondary: #444951;
+    --el-bg-primary-hover: #282828;
+  }
+}
 
 body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
@@ -11,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  background-color: var(--el-bg-secondary);
 }
 
 a {
@@ -22,4 +36,99 @@ code {
   padding: 2px 4px;
   background-color: var(--ep-color-primary-light-9);
   color: var(--ep-color-primary);
+}
+
+.ep-sub-menu__title,
+.ep-menu-item {
+  &:hover {
+    background-color: var(--el-bg-primary-hover) !important;
+  }
+}
+
+.ep-card {
+  @apply rounded-xl;
+  border-radius: 12px !important;
+}
+
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--el-bg-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  b {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 300ms all;
+
+    &:hover {
+      color: var(--ep-color-primary);
+    }
+  }
+}
+
+.exchange-card {
+  padding: 10px;
+  min-height: 280px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--el-bg-primary) !important;
+  margin-bottom: 45px;
+  box-shadow: none !important;
+
+  @media (max-width:992px) {
+    margin-bottom: 15px;
+  }
+
+  .top-side {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+      margin-right: 15px;
+    }
+
+    .info {
+      display: flex;
+      align-items: flex-end;
+
+      .text {
+        h4 {
+          display: inline-flex;
+          align-items: center;
+          font-size: 16px;
+
+          i {
+            margin-right: 5px;
+          }
+
+          span {
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+
+        h6 {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+
+
+    }
+
+    .value {
+      font-size: 20px;
+      font-weight: 500;
+
+    }
+  }
 }
