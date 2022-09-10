@@ -40,24 +40,22 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
 import { useAppStore } from "@/store/AppStore"
 
 const appStore = useAppStore()
 </script>
 
-<style scoped lang="scss">
-.el-menu-vertical-demo:not(.ep-menu--collapse) {
-	width: 300px;
-	display: block;
-}
-
-@media (max-width: 768px) {
-	.el-menu-vertical-demo.ep-menu--collapse {
-		display: none;
-	}
-}
+<style scoped>
 .el-menu-vertical-demo {
 	min-height: 100vh;
+}
+.el-menu-vertical-demo:not(.ep-menu--collapse) {
+	width: 250px !important;
+}
+
+@media (max-width: 992px) {
+	.el-menu-vertical-demo:not(.ep-menu--collapse) {
+		width: 350px !important;
+	}
 }
 </style>

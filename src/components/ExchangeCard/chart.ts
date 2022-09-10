@@ -1,10 +1,3 @@
-import { isDark } from "@/composables"
-
-export const series = [{
-  name: 'Value',
-  data: [3200, 3100, 4000, 3500],
-}]
-
 export const chartOptions = {
   chart: {
     sparkline: {
@@ -53,7 +46,7 @@ export const chartOptions = {
     },
   },
   fill: {
-    colors: '#444951',
+    colors: ['#a8a8a833'],
     type: "solid",
     gradient: {
       shadeIntensity: 0.5,

@@ -35,7 +35,7 @@ instance.interceptors.request.use(config) => {
   (config.headers as any)['X-Requested-With'] = 'XMLHttpRequest'
 
   return config
-}, (error: any) => {
+} (error: any) => {
   return Promise.reject(error)
 })
 

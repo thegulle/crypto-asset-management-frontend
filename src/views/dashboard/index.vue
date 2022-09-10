@@ -3,7 +3,7 @@
 		<el-col
 			:md="12"
 			:lg="8"
-			:sm="24"
+			:sm="12"
 			v-for="portfolio in myPortfolio"
 			:key="portfolio.id"
 		>
@@ -27,7 +27,7 @@ const myPortfolio = reactive([
 		exchangeName: "Binance",
 		exchangeLogo: BinanceLogo,
 		exchangeValue: 3800,
-		exchangeVariation: 11.2,
+		exchangeVariation: 11.2
 	},
 
 	{
@@ -35,7 +35,7 @@ const myPortfolio = reactive([
 		exchangeName: "Gate.io",
 		exchangeLogo: GateLogo,
 		exchangeValue: 4800,
-		exchangeVariation: -9.2,
+		exchangeVariation: -9.2
 	},
 
 	{
@@ -43,7 +43,7 @@ const myPortfolio = reactive([
 		exchangeName: "FTX",
 		exchangeLogo: FtxLogo,
 		exchangeValue: 5800,
-		exchangeVariation: 17.2,
-	},
+		exchangeVariation: 17.2
+	}
 ])
 </script>

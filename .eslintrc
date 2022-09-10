@@ -78,14 +78,8 @@
       },
     ],
     "semi": "off",
-    "@typescript-eslint/semi": [
-      "error",
-      "never"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "@typescript-eslint/semi": "off",
+    "comma-dangle": "off",
     "space-before-function-paren": "off",
     "no-multiple-empty-lines": 2,
     "vue/attributes-order": "off",
@@ -97,6 +91,7 @@
     "vue/attribute-hyphenation": "off",
     "vue/require-default-prop": "off",
     "vue/no-mutating-props": "off",
+    "vue/valid-template-root": "off",
     "vue/html-quotes": [
       "error",
       "double"

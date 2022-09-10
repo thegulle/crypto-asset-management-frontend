@@ -1,6 +1,6 @@
 <template>
-	<div class="flex items-center px-4 pt-4 w-75">
-		<div class="mr-4">
+	<div class="flex items-center px-4 pt-4 w-75 bg-primary">
+		<div class="mr-4 mt-2">
 			<el-avatar
 				shape="circle"
 				:size="40"
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</div>
-	<el-divider class="my-4" />
+	<el-divider class="my-4 mb-2 bg-primary" />
 	<div>
 		<ul class="user-menu">
 			<router-link :to="{ name: 'dashboard.profile.show' }">
@@ -24,12 +24,12 @@
 		</ul>
 	</div>
 </template>
-<script setup lang="ts">
-import { toggleDark, isDark } from "@/composables/"
-</script>
 <style lang="scss">
 .user-menu {
 	@apply pb-4;
+}
+.ep-scrollbar {
+	background-color: var(--el-bg-primary) !important;
 }
 .user-menu li {
 	@apply mx-3 p-4 rounded-xl cursor-pointer;

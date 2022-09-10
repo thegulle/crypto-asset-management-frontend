@@ -2,7 +2,7 @@
 	<el-header class="el-header-main">
 		<div class="header-left">
 			<button @click="appStore.toggleSidebar" class="toggle-sidebar-btn">
-				<i class="ph-list" />
+				<i class="ph-list"></i>
 			</button>
 			<Breadcrumbs />
 		</div>
@@ -19,9 +19,9 @@
 					:size="42"
 					src="https://i.pinimg.com/474x/0c/c8/5b/0cc85bfe48f5c36adf3d1e769ff8cf3a.jpg"
 				/>
-				<i class="ph-caret-down" />
+				<i class="ph-caret-down"></i>
 				<template #dropdown>
-					<UserPopover />
+					<UserPopover class="bg-primary" />
 				</template>
 			</el-dropdown>
 		</div>

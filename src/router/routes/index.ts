@@ -18,6 +18,15 @@ const routes = [
     },
     component: () => import('@/views/auth/SignUp.vue')
   },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    meta: {
+      title: 'Forgot Password',
+      hidden: true
+    },
+    component: () => import('@/views/auth/ForgotPassword.vue')
+  },
   ...dashboardRoutes
 ]
 

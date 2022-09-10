@@ -7,6 +7,7 @@ export const useAppStore = defineStore('AppStore', () => {
   const breadcrumbs: any = reactive({
     items: [{ title: 'Dashboard', router: { name: 'dashboard.show' } }]
   })
+
   const toggleSidebar = () => {
     sidebar.isOpen = !sidebar.isOpen
   }

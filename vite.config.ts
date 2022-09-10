@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import eslintPlugin from 'vite-plugin-eslint';
 
 import Unocss from 'unocss/vite'
 import {
@@ -32,7 +33,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    eslintPlugin(),
     Components({
+
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown

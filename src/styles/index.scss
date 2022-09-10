@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;900&display=swap');
+
 
 :root {
   --el-bg-primary: #FFFFFF;
@@ -23,12 +25,16 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+  font-family: "Inter", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   background-color: var(--el-bg-secondary);
+}
+
+#nprogress .bar {
+  background: var(--el-bg-third) !important;
 }
 
 .el-header-main {
@@ -169,8 +175,6 @@ body {
 
 .exchange-card {
   padding: 0px !important;
-  position: relative;
-  z-index: 1;
   background-color: var(--el-bg-primary) !important;
   margin-bottom: 45px;
   box-shadow: var(--ep-box-shadow-light);
@@ -225,6 +229,65 @@ body {
     .value {
       font-size: 20px;
       font-weight: 500;
+    }
+  }
+}
+
+.auth-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .logo {
+    height: 125px;
+    object-fit: contain;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+
+  .title {
+    h6 {
+      font-size: 25px;
+      font-weight: 500;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      font-size: 55px;
+      font-weight: 500;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      line-height: 55px;
+    }
+  }
+
+  .ep-form {
+    margin-right: 45px;
+
+    .ep-input>.ep-input__wrapper {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      background-color: var(--el-bg-primary);
+      border: none !important;
+      outline: none !important;
+
+      &.ep-input__inner {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .crypto-1 {
+    width: 20%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    right: 15%;
+
+    @media (max-width: 992px) {
+      display: none;
     }
   }
 }

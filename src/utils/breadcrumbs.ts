@@ -1,5 +1,4 @@
 import { useAppStore } from "@/store/AppStore";
-import { useRouter } from "vue-router";
 
 const appStore = useAppStore();
 

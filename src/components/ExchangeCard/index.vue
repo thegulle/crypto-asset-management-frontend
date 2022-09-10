@@ -32,8 +32,19 @@
 	</el-card>
 </template>
 <script setup lang="ts">
-import ApexCharts from "apexcharts"
-import { chartOptions, series } from "./chart"
+import { chartOptions } from "./chart"
+
+const series = [
+	{
+		name: "Value",
+		data: [
+			Math.floor(Math.random() * 1000),
+			Math.floor(Math.random() * 2000),
+			Math.floor(Math.random() * 1000),
+			Math.floor(Math.random() * 3000)
+		]
+	}
+]
 
 withDefaults(
 	defineProps<{
