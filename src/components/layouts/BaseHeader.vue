@@ -1,27 +1,34 @@
 <template>
-	<el-menu
-		:default-active="activeIndex"
-		class="el-menu-demo"
-		mode="horizontal"
-		:ellipsis="false"
-		@select="handleSelect"
-	>
-		<el-menu-item index="0"> LOGO </el-menu-item>
-		<div class="flex-grow" />
-		<el-sub-menu index="2">
-			<template #title>
+	<el-header class="el-header-main">
+		<div class="header-left">
+			<button @click="appStore.toggleSidebar" class="toggle-sidebar-btn">
+				<i class="ph-list" />
+			</button>
+			<Breadcrumbs />
+		</div>
+		<div class="header-right">
+			<div class="dark-toggle">
+				<button @click="toggleDark()">
+					<i :class="isDark ? 'ph-moon' : 'ph-sun'"></i>
+				</button>
+			</div>
+			<el-dropdown>
 				<el-avatar
 					shape="circle"
-					:size="35"
-					src="https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+					class="user-avatar"
+					:size="42"
+					src="https://i.pinimg.com/474x/0c/c8/5b/0cc85bfe48f5c36adf3d1e769ff8cf3a.jpg"
 				/>
-			</template>
-			<UserPopover />
-		</el-sub-menu>
-	</el-menu>
+				<i class="ph-caret-down" />
+				<template #dropdown>
+					<UserPopover />
+				</template>
+			</el-dropdown>
+		</div>
+	</el-header>
 </template>
 <script lang="ts" setup>
-import { toggleDark } from "@/composables"
+import { toggleDark, isDark } from "@/composables"
 
 import { useAppStore } from "@/store/AppStore"
 

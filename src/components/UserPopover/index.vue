@@ -4,24 +4,22 @@
 			<el-avatar
 				shape="circle"
 				:size="40"
-				src="https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"
+				src="https://i.pinimg.com/474x/0c/c8/5b/0cc85bfe48f5c36adf3d1e769ff8cf3a.jpg"
 			/>
 		</div>
 		<div>
-			<div class="text-xl">Name Surname</div>
+			<div class="text-xl">Username</div>
 			<div>
-				<span class="text-xs">Email</span>
+				<span class="text-xs">test@cryptolyo.com</span>
 			</div>
 		</div>
 	</div>
 	<el-divider class="my-4" />
 	<div>
 		<ul class="user-menu">
-			<li>Profile</li>
-			<li class="flex justify-between" @click="toggleDark()">
-				<div>Theme Mode</div>
-				<div>{{ isDark ? "Dark" : "Light" }}</div>
-			</li>
+			<router-link :to="{ name: 'dashboard.profile.show' }">
+				<li>Profile</li>
+			</router-link>
 			<li @click="logout">Logout</li>
 		</ul>
 	</div>
@@ -34,10 +32,9 @@ import { toggleDark, isDark } from "@/composables/"
 	@apply pb-4;
 }
 .user-menu li {
+	@apply mx-3 p-4 rounded-xl cursor-pointer;
 	&:hover {
 		background-color: var(--el-bg-primary-hover);
 	}
-
-	@apply mx-3 p-4 rounded-xl cursor-pointer;
 }
 </style>

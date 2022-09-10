@@ -8,13 +8,17 @@
 :root {
   --el-bg-primary: #FFFFFF;
   --el-bg-secondary: #F5F7FA;
+  --el-bg-third: #FFD369;
   --el-bg-primary-hover: #f2f2f2;
-  --ep-menu-bg-color: #222831;
+  --ep-menu-bg-color: #FFFFFF;
+  --ep-box-shadow-light: 0px 0px 6px rgba(0, 0, 0, 0.1);
 
   &.dark {
     --el-bg-primary: #222831;
     --el-bg-secondary: #444951;
-    --el-bg-primary-hover: #282828;
+    --el-bg-primary-hover: #393E46;
+    --ep-menu-bg-color: #222831;
+    --ep-box-shadow-light: 0px 0px 6px rgba(0, 0, 0, 0.22);
   }
 }
 
@@ -27,19 +31,122 @@ body {
   background-color: var(--el-bg-secondary);
 }
 
-a {
-  color: var(--ep-color-primary);
-}
+.el-header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: transparent;
+  gap: 10px;
+  padding: 0 !important;
+  min-width: 100%;
+  height: 95px;
 
-code {
-  border-radius: 2px;
-  padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
+
+  .header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+
+    .toggle-sidebar-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--el-bg-primary);
+      font-size: 25px;
+      border-radius: 10px;
+      padding: 9.5px;
+      transition: 300ms all;
+      box-shadow: var(--ep-box-shadow-light);
+
+      &:hover {
+        background-color: var(--el-bg-primary-hover);
+      }
+    }
+
+    .breadcrumb-container {
+      display: flex;
+      align-items: center;
+      background-color: var(--el-bg-primary);
+      border-radius: 10px;
+      padding: 13px 15px;
+      width: 100%;
+      box-shadow: var(--ep-box-shadow-light);
+
+      b {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 300ms all;
+
+        &:hover {
+          color: var(--ep-color-primary);
+        }
+      }
+    }
+  }
+
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .dark-toggle {
+
+
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 30px !important;
+      }
+    }
+
+    .user-avatar {
+      border: 2px solid var(--el-bg-third);
+    }
+  }
 }
 
 .ep-sub-menu__title,
 .ep-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px !important;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  height: 50px;
+  border-radius: 10px;
+
+  &.is-active-link {
+    padding: 1px;
+    color: var(--ep-text-color-primary);
+    background-color: var(--el-bg-primary-hover);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      border-radius: 10px;
+      background-color: var(--el-bg-third);
+    }
+  }
+
+  i {
+    font-size: 22px;
+  }
+
   &:hover {
     background-color: var(--el-bg-primary-hover) !important;
   }
@@ -50,41 +157,31 @@ code {
   border-radius: 12px !important;
 }
 
-.breadcrumb-container {
-  display: flex;
-  align-items: center;
-  background-color: var(--el-bg-secondary);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 10px;
 
-  b {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: 300ms all;
-
-    &:hover {
-      color: var(--ep-color-primary);
-    }
-  }
+.logo {
+  height: 45px;
+  object-fit: contain;
+  margin: 20px 15px;
+  margin-bottom: 40px;
 }
 
+
+
 .exchange-card {
-  padding: 10px;
-  min-height: 280px;
+  padding: 0px !important;
   position: relative;
   z-index: 1;
   background-color: var(--el-bg-primary) !important;
   margin-bottom: 45px;
-  box-shadow: none !important;
+  box-shadow: var(--ep-box-shadow-light);
 
   @media (max-width:992px) {
     margin-bottom: 15px;
   }
 
   .top-side {
+    position: relative;
+    padding: calc(var(--ep-main-padding) * 1.5);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -128,7 +225,6 @@ code {
     .value {
       font-size: 20px;
       font-weight: 500;
-
     }
   }
 }

@@ -22,12 +22,30 @@ export const dashboardRoutes = [
       },
       {
         path: '/profile',
-        name: 'profile.show',
+        name: 'dashboard.profile.show',
         meta: {
           title: 'Profile',
           hidden: true
         },
         component: () => import('@/views/dashboard/profile/index.vue')
+      },
+      {
+        path: '/portfolio',
+        name: 'dashboard.portfolio.show',
+        meta: {
+          title: 'Portfolio',
+          hidden: true
+        },
+        component: () => import('@/views/dashboard/portfolio/index.vue')
+      },
+      {
+        path: '/settings',
+        name: 'dashboard.settings.show',
+        meta: {
+          title: 'Settings',
+          hidden: true
+        },
+        component: () => import('@/views/dashboard/settings/index.vue')
       }
     ]
   }

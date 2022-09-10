@@ -1,5 +1,5 @@
 <template>
-	<el-card class="exchange-card">
+	<el-card class="exchange-card" shadow="always" body-style="padding:0px;">
 		<div class="top-side">
 			<div class="info">
 				<img :src="portfolio.exchangeLogo" alt="" />
@@ -21,10 +21,20 @@
 			<div class="value">$ {{ portfolio.exchangeValue }}</div>
 		</div>
 
-		<div class="card-chart"></div>
+		<div class="card-chart">
+			<apexchart
+				type="area"
+				height="150"
+				:options="chartOptions"
+				:series="series"
+			/>
+		</div>
 	</el-card>
 </template>
 <script setup lang="ts">
+import ApexCharts from "apexcharts"
+import { chartOptions, series } from "./chart"
+
 withDefaults(
 	defineProps<{
 		portfolio: any
@@ -32,3 +42,13 @@ withDefaults(
 	{}
 )
 </script>
+
+<style lang="scss">
+.card-chart {
+	.apexcharts-canvas {
+		.apexcharts-svg {
+			background-color: transparent !important;
+		}
+	}
+}
+</style>

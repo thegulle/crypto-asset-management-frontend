@@ -7,6 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   strict: true,
+  linkExactActiveClass: 'is-active-link',
   scrollBehavior: () => ({ left: 0, top: 0 })
 })
 

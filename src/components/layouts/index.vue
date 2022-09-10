@@ -5,7 +5,6 @@
 			<div class="content">
 				<el-main>
 					<BaseHeader />
-					<Breadcrumbs />
 					<router-view />
 				</el-main>
 			</div>
